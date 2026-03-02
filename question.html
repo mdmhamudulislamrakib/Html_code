@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Validation</title>
+</head>
+<body>
+
+<form onsubmit="return validateForm()">
+
+    Name:<br>
+    <input type="text" id="name"><br>
+    <span id="nameError">Name must be at least 3 characters long</span><br><br>
+
+    Email:<br>
+    <input type="text" id="email"><br>
+    <span id="emailError">Please enter a valid email address</span><br><br>
+
+    Password:<br>
+    <input type="password" id="password"><br>
+    <span id="passwordError">Password must be at least 6 characters long</span><br><br>
+
+    Confirm Password:<br>
+    <input type="password" id="confirmPassword"><br>
+    <span id="confirmPasswordError">Confirm Password must match Password.</span><br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+<p id="successMessage"></p>
+
+<script>
+function validateForm() {
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    var valid = true;
+
+    // Clear messages
+    document.getElementById("nameError").innerHTML = "";
+    document.getElementById("emailError").innerHTML = "";
+    document.getElementById("passwordError").innerHTML = "";
+    document.getElementById("confirmPasswordError").innerHTML = "";
+    document.getElementById("successMessage").innerHTML = "";
+
+    if (name.length < 3) {
+        document.getElementById("nameError").innerHTML = "Name must be at least 3 characters long";
+        valid = false;
+    }
+
+    if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+        document.getElementById("emailError").innerHTML = "Please enter a valid email address";
+        valid = false;
+    }
+
+    if (password.length < 6) {
+        document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters long";
+        valid = false;
+    }
+
+    if (confirmPassword != password) {
+        document.getElementById("confirmPasswordError").innerHTML = "Confirm Password must match Password.";
+        valid = false;
+    }
+
+    if (valid) {
+        document.getElementById("successMessage").innerHTML = "Form submitted successfully.";
+        return false; 
+    }
+
+    return false;
+}
+</script>
+
+</body>
+</html>

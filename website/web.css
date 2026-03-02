@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #d8fbff 0%, #8ad9f7 100%);
+    color: #1f2937;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 760px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+}
+
+.contact-form h2 {
+    margin: 0 0 20px;
+    text-align: center;
+    color: #0f4c81;
+    font-size: 28px;
+    letter-spacing: 0.4px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-form form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: #334155;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #f8fafc;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    background-color: #ffffff;
+    border-color: #22a3d8;
+    box-shadow: 0 0 0 4px rgba(34, 163, 216, 0.2);
+}
+
+.contact-form div:has(input[type="radio"]) {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.contact-form input[type="radio"] {
+    width: auto;
+    accent-color: #0ea5e9;
+}
+
+.contact-form button {
+    align-self: flex-start;
+    border: none;
+    background: linear-gradient(90deg, #0284c7, #0ea5e9);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-form button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+}
+
+.contact-form button:active {
+    transform: translateY(0);
+    opacity: 0.95;
+}
+
+@media (max-width: 640px) {
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form h2 {
+        font-size: 24px;
+    }
+
+    .contact-form button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fixed Layout</title>
+    <style>
+        header, footer {
+            position: fixed;
+            width: 100%;
+            background: lightblue;
+            text-align: center;
+            padding: 15px;
+        }
+        header {top: 0;}
+        footer {bottom: 0;}
+        .content {
+            margin-top: 80px;
+            margin-bottom: 60px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<header>Fixed Header</header>
+<div class="content">
+    <p>Main Content Area</p>
+    <p>Add more content here...</p>
+</div>
+<footer>Fixed Footer</footer>
+</body>
+</html>
